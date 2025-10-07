@@ -5,11 +5,13 @@ import nodemailer from 'nodemailer';
 const prisma = new PrismaClient();
 
 // Configuration du transporteur email
-const transporter = nodemailer.createTransporter({
-  service: 'gmail', // ou votre service email
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT || '587'),
+  secure: false,
   auth: {
-    user: process.env.MAILER_FROM,
-    pass: process.env.MAILER_PASSWORD, // Mot de passe d'application Gmail
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
   },
 });
 
@@ -53,8 +55,8 @@ export async function POST(request: NextRequest) {
 
     // Préparer l'email
     const mailOptions = {
-      from: process.env.MAILER_FROM,
-      to: process.env.MAILER_TO || 'contact@example.com',
+      from: process.env.SMTP_USER,
+      to: process.env.EMAIL_TO,
       subject: `Nouveau message de contact: ${subject}`,
       html: `
         <h2>Nouveau message de contact</h2>
@@ -69,7 +71,7 @@ export async function POST(request: NextRequest) {
     // Ajouter la pièce jointe si présente
     if (attachment && attachment.size > 0) {
       const buffer = Buffer.from(await attachment.arrayBuffer());
-      mailOptions.attachments = [{
+      (mailOptions as any).attachments = [{
         filename: attachment.name,
         content: buffer,
       }];

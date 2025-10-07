@@ -56,10 +56,6 @@ const AdminPage = () => {
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
 
-  useEffect(() => {
-    fetchProjects();
-  }, []);
-
   const fetchProjects = async () => {
     try {
       const response = await fetch('/api/projects');
@@ -73,6 +69,11 @@ const AdminPage = () => {
       setProjects([]);
     }
   };
+
+  useEffect(() => {
+    fetchProjects();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const updateAvailability = async (newStatus: 'available' | 'partially' | 'unavailable') => {
     try {
@@ -179,7 +180,7 @@ const AdminPage = () => {
 
       setMessage({ type: 'success', text: t('admin.success.delete') });
       fetchProjects();
-    } catch (error) {
+    } catch {
       setMessage({ type: 'error', text: t('admin.errors.delete') });
     }
   };
