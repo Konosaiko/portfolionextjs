@@ -9,15 +9,5 @@
     "api/**/*.ts": {
       "maxDuration": 30
     }
-  },
-  "env": {
-    "DATABASE_URL": "@database_url",
-    "DIRECT_URL": "@direct_url",
-    "JWT_SECRET": "@jwt_secret",
-    "SMTP_HOST": "@smtp_host",
-    "SMTP_PORT": "@smtp_port",
-    "SMTP_USER": "@smtp_user",
-    "SMTP_PASS": "@smtp_pass",
-    "EMAIL_TO": "@email_to"
   }
 }
