@@ -1,0 +1,266 @@
+{
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Administration"
+  },
+  "home": {
+    "title": "FullStack React/Symfony Developer & Lua Modder",
+    "subtitle": "Discover my journey, projects and skills",
+    "stats": {
+      "experience": "Years of experience",
+      "projects": "Completed projects",
+      "clients": "Satisfied clients",
+      "commits": "GitHub commits in the past year"
+    },
+    "about": {
+      "title": "About",
+      "description": "As a passionate developer, I dedicate each day to perfecting my web development and modding skills. Specialized in modern technologies like React, TypeScript, and Symfony, I create high-performance web applications while exploring game development through RedM modding.",
+      "cta": "Learn more"
+    },
+    "projects": {
+      "title": "My Projects",
+      "description": "Discover my personal and professional projects",
+      "cta": "View all projects"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Currently available as a freelance developer, I am also seeking an apprenticeship for an Application Developer program (Bachelor's degree). Whether it's for a web project, freelance collaboration, or an apprenticeship opportunity, I'm open to discussions.",
+      "subtitle": "Let's discuss your projects and how I can contribute to their success.",
+      "cta": "Contact me"
+    },
+    "meta": {
+      "title": "FullStack React/Symfony Developer & Lua Modder - Portfolio",
+      "description": "Portfolio of a fullstack developer specialized in React, TypeScript, Symfony and Lua modding. Discover my projects and skills."
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Discover my achievements and contributions",
+    "loading": "Loading projects...",
+    "error": "An error occurred while loading projects",
+    "empty": "No projects available at the moment",
+    "viewProject": "View project",
+    "readMore": "Read more",
+    "seeLess": "See less",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "fullstack": "Full Stack",
+      "modding": "Modding"
+    },
+    "meta": {
+      "title": "Projects - FullStack Developer Portfolio",
+      "description": "Discover my web development projects, applications and mods made with React, Symfony and Lua."
+    }
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "Discover who I am and what I do",
+    "description": {
+      "content": "As a passionate developer, I've always had an attraction to computers in general, dedicating each day to learning and improving my knowledge and skills. My interest in programming goes beyond web development, with a particular passion for game development and creating mods for RedM servers.\n\nOutside of coding, I'm passionate about combat sports, cycling, and airsoft. Cinema and TV series also hold an important place in my life.\nI'm also a competitor at heart, whether in gaming/esports or in my sports activities. This competitive mindset helps me to always seek improvement and push my limits, whether in development or in my personal passions."
+    },
+    "skills": {
+      "title": "Skills",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "technologies": {
+        "react": "React",
+        "typescript": "TypeScript",
+        "tailwind": "Tailwind CSS",
+        "nextjs": "Next.js",
+        "symfony": "Symfony",
+        "php": "PHP",
+        "mysql": "MySQL",
+        "api": "API REST"
+      }
+    },
+    "interests": {
+      "title": "Interests",
+      "subtitle": "What I'm passionate about beyond code",
+      "items": {
+        "gaming": {
+          "title": "Gaming & E-sports",
+          "description": "Passionate about video games and competition, I always strive to improve my skills to play at the top level."
+        },
+        "tech": {
+          "title": "New Technologies",
+          "description": "Always on the lookout for the latest technological innovations and new frameworks."
+        },
+        "learning": {
+          "title": "Continuous Learning",
+          "description": "Whether it's development, video games, or sports, I love learning and always seek to progress."
+        },
+        "gamedev": {
+          "title": "Game Dev",
+          "description": "Game development is a field that I'm passionate about and want to explore further. Currently creating mods for RedM servers, but I plan to create my own projects."
+        },
+        "sports": {
+          "title": "Sports",
+          "description": "I've practiced several sports since my youth, including various combat sports (Muay Thai, Jiu-jitsu, Viet Vo Dao), cycling, and airsoft."
+        },
+        "cinema": {
+          "title": "Cinema",
+          "description": "I really enjoy cinema, especially TV series. The series that have marked me are Breaking Bad, Mr Robot, and the Dexter universe."
+        }
+      }
+    },
+    "education": {
+      "title": "Education",
+      "subtitle": "My academic journey",
+      "items": [
+        {
+          "year": "2024",
+          "degree": "RNCP Level 5 Title - Web and Mobile Web Developer",
+          "school": "ENI Computer School",
+          "description": "Intensive training in full stack web development"
+        },
+        {
+          "year": "2022",
+          "degree": "Responsive Web Design and JavaScript ES6+ Certification",
+          "school": "FreeCodeCamp",
+          "description": "Certification in responsive web development and JavaScript ES6+"
+        },
+        {
+          "year": "2016",
+          "degree": "Professional Baccalaureate in Electronic and Digital Systems",
+          "school": "Félix Le Dantec High School",
+          "description": "Professional baccalaureate in Electronic and Digital Systems, Professional Audiovisual option"
+        }
+      ]
+    },
+    "experiences": {
+      "title": "Professional Experience",
+      "subtitle": "My professional journey",
+      "items": [
+        {
+          "period": "2024 - Present",
+          "title": "FullStack Developer",
+          "company": "Freelance",
+          "description": "Creation of websites and mobile applications for clients. Maintenance and feature additions to existing sites.",
+          "technologies": [
+            { "name": "React", "logo": "/logos/react.svg" },
+            { "name": "TypeScript", "logo": "/logos/typescript.svg" },
+            { "name": "Tailwind CSS", "logo": "/logos/tailwindcss.svg" },
+            { "name": "Symfony", "logo": "/logos/symfony.svg" },
+            { "name": "MySQL", "logo": "/logos/mysql.svg" }
+          ]
+        },
+        {
+          "period": "2024 - Present",
+          "title": "UI/UX Modder and Developer",
+          "company": "Freelance",
+          "description": "Creation of custom scripts for RedM servers. Creation of UI/UX for RedM scripts.",
+          "technologies": [
+            { "name": "React", "logo": "/logos/react.svg" },
+            { "name": "Lua", "logo": "/logos/lua.svg" },
+            { "name": "TypeScript", "logo": "/logos/typescript.svg" },
+            { "name": "MySQL", "logo": "/logos/mysql.svg" },
+            { "name": "Tailwind CSS", "logo": "/logos/tailwindcss.svg" }
+          ]
+        },
+        {
+          "period": "2025 - Present",
+          "title": "Management of a RedM Community Server",
+          "company": "Freelance",
+          "description": "I'm working on a community server project on RedM, currently under development. I manage all the modding and UI/UX development.",
+          "technologies": [
+            { "name": "React", "logo": "/logos/react.svg" },
+            { "name": "Lua", "logo": "/logos/lua.svg" },
+            { "name": "TypeScript", "logo": "/logos/typescript.svg" },
+            { "name": "MySQL", "logo": "/logos/mysql.svg" },
+            { "name": "Tailwind CSS", "logo": "/logos/tailwindcss.svg" }
+          ]
+        }
+      ]
+    },
+    "meta": {
+      "title": "About - FullStack React/Symfony Developer & Lua Modder",
+      "description": "Learn more about my journey, skills and experience as a fullstack developer and modder."
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Don't hesitate to contact me for any questions or opportunities",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "attachment": "Attachment",
+      "chooseFile": "Choose a file",
+      "removeFile": "Remove",
+      "fileSize": "Maximum size: 5MB. Accepted formats: PDF, DOC, DOCX, JPG, PNG",
+      "send": "Send",
+      "sending": "Sending..."
+    },
+    "success": "Your message has been sent successfully!",
+    "errors": {
+      "submission": "An error occurred while sending the message. Please try again.",
+      "fileTooLarge": "File is too large. Maximum size: 5MB"
+    },
+    "meta": {
+      "title": "Contact - FullStack Developer",
+      "description": "Contact me for your web development projects, application creation or modding."
+    }
+  },
+  "admin": {
+    "title": "Project Administration",
+    "addProject": "Add project",
+    "editProject": "Edit project",
+    "projects": "Existing projects",
+    "form": {
+      "title": "Title",
+      "description": "Description",
+      "image": "Project image",
+      "technologies": "Technologies used",
+      "technologiesHelp": "Separate technologies with commas",
+      "categories": "Categories",
+      "link": "Project link",
+      "save": "Save",
+      "saving": "Saving..."
+    },
+    "errors": {
+      "fetch": "Error loading projects",
+      "save": "Error saving project",
+      "delete": "Error deleting project"
+    },
+    "success": {
+      "save": "Project saved successfully",
+      "delete": "Project deleted successfully"
+    },
+    "confirm": {
+      "delete": "Are you sure you want to delete this project?"
+    },
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "availability": {
+      "title": "Manage Availability",
+      "available": "Available",
+      "partially": "Partially Available",
+      "unavailable": "Not Available",
+      "updateSuccess": "Availability status updated successfully",
+      "updateError": "Error updating availability status"
+    },
+    "form": {
+      "title": "Title",
+      "description": "Description",
+      "technologies": "Technologies",
+      "technologiesHelp": "Separate technologies with commas",
+      "link": "Project Link",
+      "categories": "Categories",
+      "image": "Image",
+      "save": "Save",
+      "saving": "Saving..."
+    }
+  },
+  "availability": {
+    "available": "Available",
+    "partially": "Partially Available",
+    "unavailable": "Not Available"
+  }
+}
