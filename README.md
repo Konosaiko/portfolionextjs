@@ -6,24 +6,30 @@ Portfolio moderne développé avec Next.js 15, TypeScript, Tailwind CSS et Prism
 
 - ✅ **Frontend moderne** : Next.js 15 + TypeScript + Tailwind CSS
 - ✅ **API intégrée** : Routes API Next.js
-- ✅ **Base de données** : Prisma + PostgreSQL (Supabase - GRATUIT)
+- ✅ **Base de données** : Prisma + PostgreSQL (Supabase)
 - ✅ **Authentification** : JWT
 - ✅ **Internationalisation** : i18next (FR/EN)
 - ✅ **Déploiement** : Vercel (serverless)
 - ✅ **Gestion des projets** : CRUD complet
-- ✅ **Formulaire de contact** : Avec upload de fichiers
+- ✅ **Formulaire de contact** : Avec upload de fichiers + Email SMTP
 - ✅ **Statut de disponibilité** : Gestion temps réel
 
 ## 📋 Prérequis
 
 - Node.js 18+
 - npm ou yarn
-- Compte Supabase (base de données PostgreSQL - 100% GRATUIT)
-- Compte Vercel (déploiement)
+- Compte Supabase (base de données PostgreSQL gratuit)
+- Compte Vercel (déploiement gratuit)
 
 ## 🛠️ Installation locale
 
-1. **Cloner et installer les dépendances**
+### ⚡ Démarrage Rapide (15 minutes)
+
+**📖 Lisez d'abord : [`DEMARRAGE_RAPIDE.md`](./DEMARRAGE_RAPIDE.md)** pour un guide complet étape par étape.
+
+### Installation en 4 étapes
+
+1. **Installer les dépendances**
 ```bash
 cd portfolio-nextjs
 npm install
@@ -31,112 +37,104 @@ npm install
 
 2. **Configurer les variables d'environnement**
 ```bash
-cp .env.example .env.local
+# Copier le modèle
+cp env.example .env
+
+# Éditer .env avec vos vraies valeurs
+# Voir VARIABLES_ENVIRONNEMENT.md pour obtenir chaque variable
 ```
 
-Éditez `.env.local` avec vos valeurs :
-```env
-# Base de données PlanetScale
-DATABASE_URL="mysql://username:password@aws.connect.psdb.cloud/portfolio?sslaccept=strict"
-
-# JWT Secret
-JWT_SECRET="votre-secret-jwt-super-securise"
-
-# Configuration Email
-MAILER_FROM="votre-email@gmail.com"
-MAILER_TO="contact@votre-site.com"
-MAILER_PASSWORD="votre-mot-de-passe-app-gmail"
-
-# Next.js
-NEXTAUTH_SECRET="votre-secret-nextauth"
-NEXTAUTH_URL="http://localhost:3000"
-```
-
-3. **Configurer la base de données**
+3. **Initialiser la base de données**
 ```bash
-# Générer le client Prisma
-npx prisma generate
-
-# Appliquer les migrations
-npx prisma db push
-
-# Créer un admin (optionnel)
-npx prisma studio
+npm run prisma:generate
+npm run prisma:push
+npm run create-admin
 ```
 
-4. **Lancer le serveur de développement**
+4. **Lancer le serveur**
 ```bash
 npm run dev
 ```
 
 Le site sera disponible sur http://localhost:3000
 
-## 🌐 Déploiement sur Vercel
+### 📚 Documentation Complète
 
-### Option 1 : Déploiement automatique avec Git
+| Document | Description |
+|----------|-------------|
+| **[DEMARRAGE_RAPIDE.md](./DEMARRAGE_RAPIDE.md)** | Guide de déploiement en 15 minutes |
+| **[GUIDE_DEPLOIEMENT.md](./GUIDE_DEPLOIEMENT.md)** | Guide détaillé complet avec captures |
+| **[VARIABLES_ENVIRONNEMENT.md](./VARIABLES_ENVIRONNEMENT.md)** | Liste de toutes les variables et comment les obtenir |
+| **[VARIABLES_RESUME.txt](./VARIABLES_RESUME.txt)** | Résumé visuel des variables (checklist) |
+| **[SECURITE.md](./SECURITE.md)** | Bonnes pratiques de sécurité |
 
-1. **Pousser votre code sur GitHub**
-```bash
-git add .
-git commit -m "Initial Next.js portfolio"
-git push origin main
-```
+## 🌐 Déploiement sur Vercel + Supabase
 
-2. **Connecter à Vercel**
-- Aller sur [vercel.com](https://vercel.com)
-- Importer votre projet GitHub
-- Vercel détectera automatiquement Next.js
+### 🚀 Guides Complets Disponibles
 
-3. **Configurer les variables d'environnement**
-Dans le dashboard Vercel :
-```
-DATABASE_URL = mysql://username:password@aws.connect.psdb.cloud/portfolio?sslaccept=strict
-JWT_SECRET = votre-secret-jwt-super-securise
-MAILER_FROM = votre-email@gmail.com
-MAILER_TO = contact@votre-site.com
-MAILER_PASSWORD = votre-mot-de-passe-app-gmail
-NEXTAUTH_SECRET = votre-secret-nextauth
-NEXTAUTH_URL = https://votre-site.vercel.app
-```
+**📘 Guide Détaillé** : [`GUIDE_DEPLOIEMENT.md`](./GUIDE_DEPLOIEMENT.md)  
+**⚡ Guide Rapide** : [`DEMARRAGE_RAPIDE.md`](./DEMARRAGE_RAPIDE.md)  
+**🔧 Variables** : [`VARIABLES_ENVIRONNEMENT.md`](./VARIABLES_ENVIRONNEMENT.md)
 
-### Option 2 : Déploiement avec CLI Vercel
+### Déploiement en 6 étapes
 
-```bash
-# Installer Vercel CLI
-npm install -g vercel
+1. **Créer une base de données Supabase** (gratuit)
+   - Allez sur [supabase.com](https://supabase.com)
+   - Créez un projet → Europe (Frankfurt)
+   - Récupérez DATABASE_URL et DIRECT_URL
 
-# Se connecter
-vercel login
+2. **Configurer localement**
+   ```bash
+   cp env.example .env
+   # Éditez .env avec vos valeurs
+   npm install
+   npm run prisma:generate
+   npm run prisma:push
+   npm run create-admin
+   ```
 
-# Déployer
-vercel --prod
+3. **Pousser sur GitHub**
+   ```bash
+   git add .
+   git commit -m "Portfolio ready"
+   git push origin main
+   ```
 
-# Configurer les variables d'environnement
-vercel env add DATABASE_URL
-vercel env add JWT_SECRET
-vercel env add MAILER_FROM
-vercel env add MAILER_TO
-vercel env add MAILER_PASSWORD
-```
+4. **Importer sur Vercel**
+   - [vercel.com](https://vercel.com) → Import Project
 
-## 🗄️ Configuration de la base de données
+5. **Ajouter les variables d'environnement**
+   - DATABASE_URL (avec pgbouncer)
+   - DIRECT_URL
+   - JWT_SECRET
+   - SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
+   - EMAIL_TO
 
-### PlanetScale (Recommandé)
+6. **Déployer** 🎉
 
-1. **Créer un compte** sur [planetscale.com](https://planetscale.com)
-2. **Créer une base de données** "portfolio"
-3. **Récupérer l'URL de connexion** dans l'onglet "Connect"
-4. **Configurer les branches** (main pour production, dev pour développement)
+### 💰 Coût : 0€/mois
 
-### Alternative : Supabase
+- **Vercel Free** : Parfait pour un portfolio
+- **Supabase Free** : 500 MB gratuit
+
+## 🗄️ Base de Données Supabase
+
+Le projet est configuré pour **PostgreSQL** via Supabase :
 
 ```prisma
-// Dans prisma/schema.prisma
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 ```
+
+**Avantages Supabase** :
+- ✅ Gratuit jusqu'à 500 MB
+- ✅ Backups automatiques
+- ✅ Interface graphique intégrée
+- ✅ API REST auto-générée
+- ✅ Compatible Vercel Serverless
 
 ## 📁 Structure du projet
 
@@ -165,13 +163,17 @@ portfolio-nextjs/
 ## 🔧 Scripts disponibles
 
 ```bash
-npm run dev          # Serveur de développement
-npm run build        # Build de production
-npm run start        # Serveur de production
-npm run lint         # Linter ESLint
-npx prisma studio    # Interface graphique base de données
-npx prisma generate  # Générer le client Prisma
-npx prisma db push   # Appliquer les migrations
+npm run dev               # Serveur de développement
+npm run build             # Build de production
+npm run start             # Serveur de production
+npm run lint              # Linter ESLint
+
+npm run prisma:generate   # Générer le client Prisma
+npm run prisma:push       # Appliquer les migrations
+npm run prisma:studio     # Interface graphique base de données
+npm run create-admin      # Créer un compte administrateur
+
+npm run setup             # Installation complète (generate + push + create-admin)
 ```
 
 ## 🎨 Personnalisation
@@ -188,30 +190,43 @@ npx prisma db push   # Appliquer les migrations
 
 ## 🚨 Dépannage
 
-### Erreur de base de données
+### "Database connection failed"
 ```bash
-# Régénérer le client Prisma
-npx prisma generate
-
-# Réinitialiser la base de données
-npx prisma db push --force-reset
+# Vérifiez vos URLs Supabase
+# DATABASE_URL doit avoir port 6543 + ?pgbouncer=true
+# DIRECT_URL doit avoir port 5432 sans pgbouncer
 ```
 
-### Erreur de build Vercel
-- Vérifier les variables d'environnement
-- S'assurer que `npm run build` fonctionne localement
-- Consulter les logs de build dans Vercel
+### "Prisma Client not generated"
+```bash
+npm run prisma:generate
+npm run build
+```
 
-### Problème d'authentification
-- Vérifier que `JWT_SECRET` est défini
-- S'assurer qu'un admin existe en base de données
+### "SMTP Authentication failed"
+→ Pour Gmail, utilisez un **mot de passe d'application**, pas votre mot de passe normal  
+→ Voir [`VARIABLES_ENVIRONNEMENT.md`](./VARIABLES_ENVIRONNEMENT.md) section SMTP_PASS
+
+### "Build failed on Vercel"
+- Vérifiez que toutes les variables sont dans Vercel (Settings → Environment Variables)
+- Vérifiez que DATABASE_URL est configuré
+- Consultez les logs de build dans Vercel
+
+### Autres problèmes
+Consultez [`GUIDE_DEPLOIEMENT.md`](./GUIDE_DEPLOIEMENT.md) section "Dépannage"
 
 ## 📞 Support
 
-Pour toute question ou problème :
-- Créer une issue sur GitHub
-- Consulter la documentation [Next.js](https://nextjs.org/docs)
-- Consulter la documentation [Vercel](https://vercel.com/docs)
+**📚 Documentation Complète** :
+- [GUIDE_DEPLOIEMENT.md](./GUIDE_DEPLOIEMENT.md) - Guide détaillé
+- [VARIABLES_ENVIRONNEMENT.md](./VARIABLES_ENVIRONNEMENT.md) - Variables d'environnement
+- [SECURITE.md](./SECURITE.md) - Bonnes pratiques
+
+**Ressources externes** :
+- [Documentation Next.js](https://nextjs.org/docs)
+- [Documentation Vercel](https://vercel.com/docs)
+- [Documentation Supabase](https://supabase.com/docs)
+- [Documentation Prisma](https://www.prisma.io/docs)
 
 ## 📄 Licence
 

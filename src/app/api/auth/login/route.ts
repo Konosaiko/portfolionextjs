@@ -49,22 +49,7 @@ export async function POST(request: NextRequest) {
       { expiresIn: '24h' }
     );
 
-    // Créer la réponse avec le cookie httpOnly
-    const response = NextResponse.json({ 
-      success: true,
-      message: 'Connexion réussie' 
-    });
-
-    // Définir le cookie sécurisé
-    response.cookies.set('admin_token', token, {
-      httpOnly: true, // Empêche l'accès JavaScript côté client
-      secure: process.env.NODE_ENV === 'production', // HTTPS uniquement en prod
-      sameSite: 'strict', // Protection CSRF
-      maxAge: 60 * 60 * 24, // 24 heures
-      path: '/',
-    });
-
-    return response;
+    return NextResponse.json({ token });
 
   } catch (error) {
     console.error('Error during authentication:', error);

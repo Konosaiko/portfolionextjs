@@ -1,20 +1,23 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run prisma:generate && npm run build",
   "outputDirectory": ".next",
   "framework": "nextjs",
   "installCommand": "npm install",
   "devCommand": "npm run dev",
   "regions": ["cdg1"],
   "functions": {
-    "src/app/api/**/*.ts": {
+    "api/**/*.ts": {
       "maxDuration": 30
     }
   },
   "env": {
     "DATABASE_URL": "@database_url",
+    "DIRECT_URL": "@direct_url",
     "JWT_SECRET": "@jwt_secret",
-    "MAILER_FROM": "@mailer_from",
-    "MAILER_TO": "@mailer_to",
-    "MAILER_PASSWORD": "@mailer_password"
+    "SMTP_HOST": "@smtp_host",
+    "SMTP_PORT": "@smtp_port",
+    "SMTP_USER": "@smtp_user",
+    "SMTP_PASS": "@smtp_pass",
+    "EMAIL_TO": "@email_to"
   }
 }
