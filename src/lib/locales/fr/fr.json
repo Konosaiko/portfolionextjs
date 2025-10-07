@@ -212,6 +212,13 @@
     "addProject": "Ajouter un projet",
     "editProject": "Modifier le projet",
     "projects": "Projets existants",
+    "login": {
+      "title": "Connexion Admin",
+      "username": "Nom d'utilisateur",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "loading": "Connexion..."
+    },
     "form": {
       "title": "Titre",
       "description": "Description",

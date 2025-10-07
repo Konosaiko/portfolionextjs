@@ -1,4 +1,4 @@
-import AboutPage from '@/pages/AboutPage';
+import AboutPage from '@/page-components/AboutPage';
 
 export default function About() {
   return <AboutPage />;
