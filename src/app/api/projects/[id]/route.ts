@@ -6,10 +6,11 @@ const prisma = new PrismaClient();
 // PUT /api/projects/[id] - Mettre à jour un projet
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id);
+    const { id: idParam } = await params;
+    const id = parseInt(idParam);
     const data = await request.json();
 
     const project = await prisma.project.findUnique({
@@ -57,10 +58,11 @@ export async function PUT(
 // DELETE /api/projects/[id] - Supprimer un projet
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const id = parseInt(params.id);
+    const { id: idParam } = await params;
+    const id = parseInt(idParam);
 
     const project = await prisma.project.findUnique({
       where: { id }

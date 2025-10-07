@@ -106,7 +106,7 @@ const ContactPage = () => {
         message: '',
         attachment: null
       });
-    } catch (error) {
+    } catch {
       setStatus({
         type: 'error',
         message: t('contact.errors.submission')

@@ -6,13 +6,10 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { 
   UserCircleIcon, 
-  BriefcaseIcon, 
   CodeBracketIcon,
-  DocumentTextIcon,
   EnvelopeIcon,
   ClockIcon,
   TrophyIcon,
-  StarIcon,
   UserGroupIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
@@ -40,10 +37,6 @@ const HomePage = () => {
   const [latestProject, setLatestProject] = useState<Project | null>(null);
   const currentLanguage = i18n.language;
 
-  useEffect(() => {
-    fetchLatestProject();
-  }, []);
-
   const fetchLatestProject = async () => {
     try {
       const response = await fetch('/api/projects');
@@ -59,6 +52,11 @@ const HomePage = () => {
       console.error('Erreur:', error);
     }
   };
+
+  useEffect(() => {
+    fetchLatestProject();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const getStatusColor = (status: string) => {
     switch (status) {
