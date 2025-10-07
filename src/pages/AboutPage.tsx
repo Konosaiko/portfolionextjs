@@ -91,8 +91,11 @@ const interests = [
 const AboutPage = () => {
   const { t } = useTranslation();
 
-  const experiences = t('about.experiences.items', { returnObjects: true }) as Experience[];
-  const education = t('about.education.items', { returnObjects: true }) as Education[];
+  const experiencesData = t('about.experiences.items', { returnObjects: true });
+  const educationData = t('about.education.items', { returnObjects: true });
+  
+  const experiences = Array.isArray(experiencesData) ? experiencesData as Experience[] : [];
+  const education = Array.isArray(educationData) ? educationData as Education[] : [];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white p-8">

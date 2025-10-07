@@ -20,22 +20,6 @@ interface ProjectFormData {
   uploadedImageUrl?: string;
 }
 
-interface Project {
-  id: number;
-  title: {
-    fr: string;
-    en: string;
-  };
-  description: {
-    fr: string;
-    en: string;
-  };
-  image: string;
-  technologies: string[];
-  categories: string[];
-  link?: string;
-}
-
 interface ProjectFormProps {
   formData: ProjectFormData;
   setFormData: React.Dispatch<React.SetStateAction<ProjectFormData>>;
