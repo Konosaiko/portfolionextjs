@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 interface ProjectFormData {
@@ -42,9 +43,7 @@ interface ProjectFormProps {
   imagePreview: string | null;
   setImagePreview: React.Dispatch<React.SetStateAction<string | null>>;
   isLoading: boolean;
-  setMessage: React.Dispatch<React.SetStateAction<{ type: 'success' | 'error'; text: string } | null>>;
   handleCancel?: () => void;
-  editingProject: Project | null;
 }
 
 const ProjectForm: React.FC<ProjectFormProps> = ({
@@ -54,9 +53,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
   imagePreview,
   setImagePreview,
   isLoading,
-  setMessage,
   handleCancel,
-  editingProject
 }) => {
   const { t } = useTranslation();
 
@@ -90,7 +87,6 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
   };
 
   const handleTechnologiesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const technologies = e.target.value.split(',').map(tech => tech.trim());
     setFormData(prev => ({ ...prev, technologies: e.target.value }));
   };
 
@@ -267,10 +263,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
         {imagePreview && (
           <div className="mt-4">
             <div className="relative group">
-              <img 
+              <Image 
                 src={imagePreview} 
                 alt="Preview" 
+                width={400}
+                height={192}
                 className="w-full h-48 object-cover rounded-lg border border-gray-600"
+                unoptimized
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
                 <button

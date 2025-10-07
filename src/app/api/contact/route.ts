@@ -54,7 +54,13 @@ export async function POST(request: NextRequest) {
     });
 
     // Préparer l'email
-    const mailOptions = {
+    const mailOptions: {
+      from: string | undefined;
+      to: string | undefined;
+      subject: string;
+      html: string;
+      attachments?: Array<{ filename: string; content: Buffer }>;
+    } = {
       from: process.env.SMTP_USER,
       to: process.env.EMAIL_TO,
       subject: `Nouveau message de contact: ${subject}`,
@@ -71,7 +77,7 @@ export async function POST(request: NextRequest) {
     // Ajouter la pièce jointe si présente
     if (attachment && attachment.size > 0) {
       const buffer = Buffer.from(await attachment.arrayBuffer());
-      (mailOptions as any).attachments = [{
+      mailOptions.attachments = [{
         filename: attachment.name,
         content: buffer,
       }];

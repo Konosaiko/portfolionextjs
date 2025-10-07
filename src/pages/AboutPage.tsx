@@ -1,15 +1,12 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import {
-  CommandLineIcon,
-  CodeBracketIcon,
   AcademicCapIcon,
-  UserGroupIcon,
   PuzzlePieceIcon,
-  GlobeAltIcon,
   FilmIcon,
   TrophyIcon,
   HeartIcon,
@@ -157,9 +154,11 @@ const AboutPage = () => {
                         key={techIndex}
                         className="flex items-center bg-gray-800/50 rounded-full px-3 py-1"
                       >
-                        <img
+                        <Image
                           src={tech.logo}
                           alt={tech.name}
+                          width={16}
+                          height={16}
                           className="w-4 h-4 mr-2 invert"
                         />
                         <span className="text-sm text-gray-300">{tech.name}</span>

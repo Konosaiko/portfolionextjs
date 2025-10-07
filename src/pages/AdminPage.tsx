@@ -275,8 +275,6 @@ const AdminPage = () => {
               imagePreview={imagePreview}
               setImagePreview={setImagePreview}
               handleCancel={handleCancel}
-              editingProject={editingProject}
-              setMessage={setMessage}
             />
           </div>
         </div>
