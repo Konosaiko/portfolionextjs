@@ -77,30 +77,6 @@ const HomePage = () => {
     return t(`availability.${status}`);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20
-      }
-    }
-  };
-
   const stats = [
     {
       title: t('home.stats.experience'),
@@ -130,45 +106,37 @@ const HomePage = () => {
 
   return (
     <motion.div 
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
       className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-8"
     >
-      <motion.div 
-        className="max-w-7xl mx-auto"
-        variants={containerVariants}
-      >
+      <div className="max-w-7xl mx-auto">
         <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="mb-12"
-          variants={itemVariants}
         >
-          <motion.h1 
-            className="text-2xl md:text-3xl font-bold text-white mb-4"
-            variants={itemVariants}
-          >
+          <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
             {t('home.title')}
-          </motion.h1>
-          <motion.p 
-            className="text-gray-400 text-lg"
-            variants={itemVariants}
-          >
+          </h1>
+          <p className="text-gray-400 text-lg">
             {t('home.subtitle')}
-          </motion.p>
+          </p>
         </motion.div>
 
         {/* Main Grid Layout - 2x2 */}
-        <motion.div 
-          className="grid grid-cols-2 gap-6"
-          variants={containerVariants}
-        >
+        <div className="grid grid-cols-2 gap-6">
           {/* Social Proof Section */}
-          <motion.div 
-            className="grid grid-cols-2 gap-4 h-full"
-            variants={containerVariants}
-          >
+          <div className="grid grid-cols-2 gap-4 h-full">
             {stats.map((stat, index) => (
-              <motion.div key={index} variants={itemVariants}>
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 + index * 0.05 }}
+              >
                 <div className={`bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50 hover:border-${stat.color}-500/50 flex flex-col items-center justify-center text-center h-full`}>
                   <div className={`text-${stat.color}-500 mb-3`}>
                     <div className="w-8 h-8 flex items-center justify-center">
@@ -184,11 +152,13 @@ const HomePage = () => {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           {/* About Box */}
           <motion.div 
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
             className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
           >
             <div className="p-6 h-full flex flex-col">
@@ -215,7 +185,9 @@ const HomePage = () => {
 
           {/* Projects Box */}
           <motion.div 
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
             className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300"
           >
             <div className="p-6 border-b border-gray-700/50">
@@ -242,8 +214,7 @@ const HomePage = () => {
             </div>
 
             {latestProject && (
-              <motion.div 
-                variants={itemVariants}
+              <div
                 className="relative aspect-video w-full overflow-hidden"
               >
                 <div className="w-full h-full bg-gray-700 flex items-center justify-center">
@@ -256,23 +227,24 @@ const HomePage = () => {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {latestProject.technologies.map((tech, index) => (
-                      <motion.span 
+                      <span 
                         key={index}
-                        variants={itemVariants}
                         className="px-2 py-1 text-sm bg-gray-700/80 text-gray-200 rounded-md"
                       >
                         {tech}
-                      </motion.span>
+                      </span>
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )}
           </motion.div>
 
           {/* Contact Box */}
           <motion.div 
-            variants={itemVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
             className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-green-500/50 transition-all duration-300"
           >
             <div className="p-6 h-full flex flex-col">
@@ -314,8 +286,8 @@ const HomePage = () => {
               </Link>
             </div>
           </motion.div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </motion.div>
   );
 };
