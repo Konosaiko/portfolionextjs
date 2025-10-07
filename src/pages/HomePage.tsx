@@ -13,6 +13,7 @@ import {
   UserGroupIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
+import { Variants } from 'framer-motion';
 import { useAvailability } from '@/contexts/AvailabilityContext';
 
 interface Project {
@@ -75,7 +76,7 @@ const HomePage = () => {
     return t(`availability.${status}`);
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -86,13 +87,13 @@ const HomePage = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 20
       }
