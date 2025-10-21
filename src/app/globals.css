@@ -15,12 +15,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 a {
@@ -31,5 +36,27 @@ a {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* Amélioration du scroll sur mobile */
+@media (max-width: 640px) {
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  /* Smooth scrolling pour mobile */
+  html {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Prévention du zoom sur les inputs sur iOS */
+@media screen and (max-width: 640px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  textarea {
+    font-size: 16px !important;
   }
 }

@@ -48,16 +48,16 @@ const AvailabilityTooltip = () => {
   if (!availability) return null;
 
   return (
-    <div className={`p-4 rounded-lg border ${getStatusColor(availability.status)} backdrop-blur-sm`}>
-      <div className="flex items-start gap-3">
-        <div className={`w-3 h-3 rounded-full mt-1.5 ${getStatusDotColor(availability.status)}`} />
+    <div className={`p-3 sm:p-4 rounded-lg border ${getStatusColor(availability.status)} backdrop-blur-sm`}>
+      <div className="flex items-start gap-2 sm:gap-3">
+        <div className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full mt-1 sm:mt-1.5 flex-shrink-0 ${getStatusDotColor(availability.status)}`} />
         <div>
-          <h3 className="font-semibold text-white mb-1">
+          <h3 className="font-semibold text-white mb-1 text-sm sm:text-base">
             {availability.status === 'available' && "Disponible pour de nouveaux projets"}
             {availability.status === 'partially' && "Partiellement disponible"}
             {availability.status === 'unavailable' && "Actuellement indisponible"}
           </h3>
-          <p className="text-gray-300 text-sm leading-relaxed">
+          <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
             {getStatusMessage(availability.status)}
           </p>
         </div>

@@ -94,9 +94,9 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
   const availableCategories = ['frontend', 'backend', 'fullstack', 'modding'];
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
       <div>
-        <label htmlFor="title-fr" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="title-fr" className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
           {t('admin.form.title')} (FR)
         </label>
         <input
@@ -106,13 +106,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
           value={formData.title.fr}
           onChange={(e) => handleChange(e, 'fr')}
           required
-          className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+          className="w-full px-3 py-2 sm:px-4 text-sm sm:text-base bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
           placeholder="Mon super projet"
         />
       </div>
 
       <div>
-        <label htmlFor="title-en" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="title-en" className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
           {t('admin.form.title')} (EN)
         </label>
         <input
@@ -122,13 +122,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
           value={formData.title.en}
           onChange={(e) => handleChange(e, 'en')}
           required
-          className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+          className="w-full px-3 py-2 sm:px-4 text-sm sm:text-base bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
           placeholder="My awesome project"
         />
       </div>
 
       <div>
-        <label htmlFor="description-fr" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="description-fr" className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
           {t('admin.form.description')} (FR)
         </label>
         <textarea
@@ -138,13 +138,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
           onChange={(e) => handleChange(e, 'fr')}
           required
           rows={4}
-          className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white resize-y"
+          className="w-full px-3 py-2 sm:px-4 text-sm sm:text-base bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white resize-y"
           placeholder="Description détaillée du projet..."
         />
       </div>
 
       <div>
-        <label htmlFor="description-en" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="description-en" className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
           {t('admin.form.description')} (EN)
         </label>
         <textarea
@@ -154,13 +154,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
           onChange={(e) => handleChange(e, 'en')}
           required
           rows={4}
-          className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white resize-y"
+          className="w-full px-3 py-2 sm:px-4 text-sm sm:text-base bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white resize-y"
           placeholder="Detailed project description..."
         />
       </div>
 
       <div>
-        <label htmlFor="technologies" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="technologies" className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
           {t('admin.form.technologies')}
         </label>
         <input
@@ -170,15 +170,15 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
           value={formData.technologies}
           onChange={handleTechnologiesChange}
           placeholder="React, TypeScript, Symfony..."
-          className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+          className="w-full px-3 py-2 sm:px-4 text-sm sm:text-base bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
         />
-        <p className="mt-1 text-sm text-gray-400">
+        <p className="mt-1 text-xs sm:text-sm text-gray-400">
           {t('admin.form.technologiesHelp')}
         </p>
       </div>
 
       <div>
-        <label htmlFor="link" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="link" className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
           {t('admin.form.link')}
         </label>
         <input
@@ -188,19 +188,19 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
           value={formData.link}
           onChange={(e) => setFormData(prev => ({ ...prev, link: e.target.value }))}
           placeholder="https://github.com/username/project"
-          className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+          className="w-full px-3 py-2 sm:px-4 text-sm sm:text-base bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-300 mb-2">
+        <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
           {t('admin.form.categories')}
         </label>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
           {availableCategories.map(category => (
             <label 
               key={category} 
-              className={`flex items-center p-3 rounded-lg border transition-colors cursor-pointer ${
+              className={`flex items-center p-2 sm:p-3 rounded-lg border transition-colors cursor-pointer ${
                 formData.categories.includes(category)
                   ? 'bg-blue-500/20 border-blue-500/50'
                   : 'bg-gray-700/50 border-gray-600 hover:border-gray-500'
@@ -211,25 +211,25 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
                 value={category}
                 checked={formData.categories.includes(category)}
                 onChange={handleCategoryChange}
-                className="w-4 h-4 text-blue-500 bg-gray-700 border-gray-600 rounded focus:ring-blue-500"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-500 bg-gray-700 border-gray-600 rounded focus:ring-blue-500"
               />
-              <span className="ml-3 text-gray-300">{t(`projects.categories.${category}`)}</span>
+              <span className="ml-2 sm:ml-3 text-gray-300 text-xs sm:text-sm">{t(`projects.categories.${category}`)}</span>
             </label>
           ))}
         </div>
       </div>
 
       <div>
-        <label htmlFor="image" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="image" className="block text-xs sm:text-sm font-medium text-gray-300 mb-1.5 sm:mb-2">
           {t('admin.form.image')}
         </label>
         <div className="flex items-center justify-center w-full">
-          <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-700/30 hover:bg-gray-700/50 transition-all">
-            <div className="flex flex-col items-center justify-center pt-5 pb-6">
-              <svg className="w-8 h-8 mb-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+          <label htmlFor="image" className="flex flex-col items-center justify-center w-full h-28 sm:h-32 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-700/30 hover:bg-gray-700/50 transition-all">
+            <div className="flex flex-col items-center justify-center pt-4 pb-5 sm:pt-5 sm:pb-6">
+              <svg className="w-6 h-6 sm:w-8 sm:h-8 mb-3 sm:mb-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
               </svg>
-              <p className="mb-2 text-sm text-gray-400">
+              <p className="mb-1.5 sm:mb-2 text-xs sm:text-sm text-gray-400 text-center px-2">
                 <span className="font-semibold">Cliquez pour uploader</span> ou glissez-déposez
               </p>
               <p className="text-xs text-gray-400">PNG, JPG ou WEBP (MAX. 2MB)</p>
@@ -245,14 +245,14 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
           </label>
         </div>
         {imagePreview && (
-          <div className="mt-4">
+          <div className="mt-3 sm:mt-4">
             <div className="relative group">
               <Image 
                 src={imagePreview} 
                 alt="Preview" 
                 width={400}
                 height={192}
-                className="w-full h-48 object-cover rounded-lg border border-gray-600"
+                className="w-full h-36 sm:h-48 object-cover rounded-lg border border-gray-600"
                 unoptimized
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-lg">
@@ -262,7 +262,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
                     setFormData(prev => ({ ...prev, image: null }));
                     setImagePreview(null);
                   }}
-                  className="text-white bg-red-500/80 hover:bg-red-600/80 px-4 py-2 rounded-lg transition-colors"
+                  className="text-white bg-red-500/80 hover:bg-red-600/80 px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg transition-colors text-xs sm:text-sm"
                 >
                   Supprimer
                 </button>
@@ -272,11 +272,11 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
         )}
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
         <button
           type="submit"
           disabled={isLoading}
-          className="flex-1 py-3 px-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex-1 py-2.5 sm:py-3 px-3 sm:px-4 text-sm sm:text-base bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isLoading ? t('admin.form.saving') : t('admin.form.save')}
         </button>
@@ -284,7 +284,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({
           <button
             type="button"
             onClick={handleCancel}
-            className="flex-1 py-3 px-4 bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all"
+            className="flex-1 py-2.5 sm:py-3 px-3 sm:px-4 text-sm sm:text-base bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all"
           >
             Annuler
           </button>

@@ -205,53 +205,53 @@ const AdminPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           Administration
         </h1>
 
         {message && (
-          <div className={`mb-6 p-4 rounded-lg ${
+          <div className={`mb-4 sm:mb-6 p-3 sm:p-4 rounded-lg ${
             message.type === 'success' ? 'bg-green-500/20 border border-green-500' : 'bg-red-500/20 border border-red-500'
           }`}>
-            <p className="text-center">{message.text}</p>
+            <p className="text-center text-sm sm:text-base">{message.text}</p>
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
           {/* Projets */}
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50">
-            <h2 className="text-xl font-bold mb-4 text-white">Projets</h2>
-            <div className="space-y-4 max-h-96 overflow-y-auto">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-gray-700/50">
+            <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">Projets</h2>
+            <div className="space-y-3 sm:space-y-4 max-h-80 sm:max-h-96 overflow-y-auto">
               {projects.map((project) => (
-                <div key={project.id} className="bg-gray-700/50 rounded-lg p-4">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="font-semibold text-white">
+                <div key={project.id} className="bg-gray-700/50 rounded-lg p-3 sm:p-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-white text-sm sm:text-base">
                         {project.title[currentLanguage] || project.title.en}
                       </h3>
-                      <div className="flex flex-wrap gap-2 mt-2">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2">
                         {project.categories.map((category, index) => (
                           <span
                             key={index}
-                            className="px-2 py-1 bg-gray-600/50 rounded-full text-xs text-gray-300"
+                            className="px-2 py-0.5 sm:py-1 bg-gray-600/50 rounded-full text-xs text-gray-300"
                           >
                             {t(`projects.categories.${category}`)}
                           </span>
                         ))}
                       </div>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 self-start sm:flex-shrink-0">
                       <button
                         onClick={() => handleEdit(project)}
-                        className="bg-blue-500/80 text-white px-3 py-1 rounded hover:bg-blue-600/80 transition-colors"
+                        className="bg-blue-500/80 text-white px-2 sm:px-3 py-1 rounded hover:bg-blue-600/80 transition-colors text-xs sm:text-sm"
                       >
                         Modifier
                       </button>
                       <button
                         onClick={() => handleDelete(project.id)}
-                        className="bg-red-500/80 text-white px-3 py-1 rounded hover:bg-red-600/80 transition-colors"
+                        className="bg-red-500/80 text-white px-2 sm:px-3 py-1 rounded hover:bg-red-600/80 transition-colors text-xs sm:text-sm"
                       >
                         Supprimer
                       </button>
@@ -263,8 +263,8 @@ const AdminPage = () => {
           </div>
 
           {/* Formulaire */}
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50">
-            <h2 className="text-xl font-bold mb-4 text-white">
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-gray-700/50">
+            <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">
               {editingProject ? 'Modifier le projet' : 'Ajouter un projet'}
             </h2>
             <ProjectForm
@@ -280,12 +280,12 @@ const AdminPage = () => {
         </div>
 
         {/* Disponibilité */}
-        <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50 max-w-md">
-          <h2 className="text-xl font-bold mb-4 text-white">Disponibilité</h2>
-          <div className="flex gap-2">
+        <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 border border-gray-700/50 max-w-full sm:max-w-md">
+          <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white">Disponibilité</h2>
+          <div className="grid grid-cols-1 sm:flex sm:flex-wrap gap-2">
             <button
               onClick={() => updateAvailability('available')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg transition-colors text-sm sm:text-base ${
                 availability?.status === 'available'
                   ? 'bg-green-500/80 text-white'
                   : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/50'
@@ -295,7 +295,7 @@ const AdminPage = () => {
             </button>
             <button
               onClick={() => updateAvailability('partially')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg transition-colors text-sm sm:text-base ${
                 availability?.status === 'partially'
                   ? 'bg-yellow-500/80 text-white'
                   : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/50'
@@ -305,7 +305,7 @@ const AdminPage = () => {
             </button>
             <button
               onClick={() => updateAvailability('unavailable')}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg transition-colors text-sm sm:text-base ${
                 availability?.status === 'unavailable'
                   ? 'bg-red-500/80 text-white'
                   : 'bg-gray-700/50 text-gray-300 hover:bg-gray-600/50'

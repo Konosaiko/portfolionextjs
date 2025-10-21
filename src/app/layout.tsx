@@ -31,7 +31,7 @@ export default function RootLayout({
           <AvailabilityProvider>
             <div className="flex min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
               <Sidebar />
-              <main className="flex-1 ml-64 p-4">
+              <main className="flex-1 lg:ml-64 p-2 sm:p-4 md:p-6">
                 {children}
               </main>
             </div>

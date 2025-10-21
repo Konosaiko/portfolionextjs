@@ -66,31 +66,31 @@ const ProjectsPage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-8 flex items-center justify-center">
-        <div className="text-white text-xl">{t('projects.loading')}</div>
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 sm:p-6 md:p-8 flex items-center justify-center">
+        <div className="text-white text-lg sm:text-xl">{t('projects.loading')}</div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-8 flex items-center justify-center">
-        <div className="text-red-500 text-xl">{t('projects.error')}</div>
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 sm:p-6 md:p-8 flex items-center justify-center">
+        <div className="text-red-500 text-lg sm:text-xl">{t('projects.error')}</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           {t('projects.title')}
         </h1>
 
-        <div className="mb-8 flex flex-wrap gap-4">
+        <div className="mb-6 sm:mb-8 flex flex-wrap gap-2 sm:gap-3 md:gap-4">
           <button
             onClick={() => setSelectedCategory('all')}
-            className={`px-4 py-2 rounded-lg transition-colors ${
+            className={`px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base rounded-lg transition-colors ${
               selectedCategory === 'all'
                 ? 'bg-blue-500 text-white'
                 : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -102,7 +102,7 @@ const ProjectsPage: React.FC = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base rounded-lg transition-colors ${
                 selectedCategory === category
                   ? 'bg-blue-500 text-white'
                   : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -113,27 +113,27 @@ const ProjectsPage: React.FC = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {filteredProjects.map(project => (
             <div
               key={project.id}
               className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300"
             >
               <div className="aspect-video bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400">Image du projet</span>
+                <span className="text-gray-400 text-sm sm:text-base">Image du projet</span>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">
+              <div className="p-4 sm:p-5 md:p-6">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2">
                   {project.title.fr || project.title.en}
                 </h3>
-                <p className="text-gray-300 mb-4 line-clamp-3">
+                <p className="text-gray-300 mb-3 sm:mb-4 line-clamp-3 text-sm sm:text-base">
                   {project.description.fr || project.description.en}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                   {project.technologies.slice(0, 3).map((tech, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full"
+                      className="px-2 py-0.5 sm:py-1 bg-blue-500/20 text-blue-300 text-xs sm:text-sm rounded-full"
                     >
                       {tech}
                     </span>
@@ -144,7 +144,7 @@ const ProjectsPage: React.FC = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm sm:text-base"
                   >
                     Voir le projet →
                   </a>
@@ -155,7 +155,7 @@ const ProjectsPage: React.FC = () => {
         </div>
 
         {filteredProjects.length === 0 && (
-          <div className="text-center text-gray-400 mt-8">
+          <div className="text-center text-gray-400 mt-6 sm:mt-8 text-sm sm:text-base">
             {t('projects.empty')}
           </div>
         )}
