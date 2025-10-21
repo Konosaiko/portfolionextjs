@@ -57,26 +57,22 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
-          {/* Overlay */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50"
-          />
-
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 sm:p-6"
+        >
           {/* Modal */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: 'spring', duration: 0.5 }}
-              className="bg-gray-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border border-gray-700"
-              onClick={(e) => e.stopPropagation()}
-            >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: 'spring', duration: 0.5 }}
+            className="bg-gray-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border border-gray-700 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
               {/* Header avec bouton fermer */}
               <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-700">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
@@ -168,9 +164,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                   )}
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </>
+          </motion.div>
+        </motion.div>
       )}
     </AnimatePresence>
   );
