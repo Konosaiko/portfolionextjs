@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
+import ProjectModal from '@/components/ProjectModal';
 
 interface Project {
   id: number;
@@ -27,6 +28,18 @@ const ProjectsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openProjectModal = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300); // Attendre la fin de l'animation
+  };
 
   useEffect(() => {
     fetchProjects();
@@ -118,7 +131,8 @@ const ProjectsPage: React.FC = () => {
           {filteredProjects.map(project => (
             <div
               key={project.id}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300"
+              onClick={() => openProjectModal(project)}
+              className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300 cursor-pointer group"
             >
               <div className="aspect-video bg-gray-700 flex items-center justify-center relative overflow-hidden">
                 {project.image ? (
@@ -126,15 +140,17 @@ const ProjectsPage: React.FC = () => {
                     src={project.image}
                     alt={project.title.fr || project.title.en}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                     unoptimized
                   />
                 ) : (
                   <span className="text-gray-400 text-sm sm:text-base">Image du projet</span>
                 )}
+                {/* Overlay au survol */}
+                <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-300" />
               </div>
               <div className="p-4 sm:p-5 md:p-6">
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
                   {project.title.fr || project.title.en}
                 </h3>
                 <p className="text-gray-300 mb-3 sm:mb-4 line-clamp-3 text-sm sm:text-base">
@@ -149,17 +165,15 @@ const ProjectsPage: React.FC = () => {
                       {tech}
                     </span>
                   ))}
+                  {project.technologies.length > 3 && (
+                    <span className="px-2 py-0.5 sm:py-1 bg-gray-700/50 text-gray-400 text-xs sm:text-sm rounded-full">
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
                 </div>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm sm:text-base"
-                  >
-                    Voir le projet →
-                  </a>
-                )}
+                <div className="text-blue-400 group-hover:text-blue-300 transition-colors text-sm sm:text-base font-medium">
+                  {t('projects.viewDetails') || 'Voir les détails'} →
+                </div>
               </div>
             </div>
           ))}
@@ -171,6 +185,13 @@ const ProjectsPage: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Modal de détails du projet */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </div>
   );
 };

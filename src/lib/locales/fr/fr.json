@@ -43,9 +43,11 @@
     "error": "Une erreur est survenue lors du chargement des projets",
     "empty": "Aucun projet disponible pour le moment",
     "viewProject": "Voir le projet",
+    "viewDetails": "Voir les détails",
     "readMore": "En savoir plus",
     "seeLess": "Voir moins",
     "categories": {
+      "title": "Catégories",
       "all": "Tous",
       "frontend": "Frontend",
       "backend": "Backend",
@@ -240,17 +242,6 @@
       "unavailable": "Non disponible",
       "updateSuccess": "Statut de disponibilité mis à jour avec succès",
       "updateError": "Erreur lors de la mise à jour du statut de disponibilité"
-    },
-    "form": {
-      "title": "Titre",
-      "description": "Description",
-      "technologies": "Technologies",
-      "technologiesHelp": "Séparez les technologies par des virgules",
-      "link": "Lien du projet",
-      "categories": "Catégories",
-      "image": "Image",
-      "save": "Enregistrer",
-      "saving": "Enregistrement..."
     }
   },
   "availability": {

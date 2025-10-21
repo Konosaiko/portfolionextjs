@@ -16,6 +16,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Variants } from 'framer-motion';
 import { useAvailability } from '@/contexts/AvailabilityContext';
+import ProjectModal from '@/components/ProjectModal';
 
 interface Project {
   id: number;
@@ -37,7 +38,18 @@ const HomePage = () => {
   const { t, i18n } = useTranslation();
   const { availability } = useAvailability();
   const [latestProject, setLatestProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const currentLanguage = i18n.language;
+
+  const openProjectModal = () => {
+    if (latestProject) {
+      setIsModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const fetchLatestProject = async () => {
     try {
@@ -244,14 +256,15 @@ const HomePage = () => {
             {latestProject && (
               <motion.div 
                 variants={itemVariants}
-                className="relative aspect-video w-full overflow-hidden"
+                onClick={openProjectModal}
+                className="relative aspect-video w-full overflow-hidden cursor-pointer group"
               >
                 {latestProject.image ? (
                   <Image
                     src={latestProject.image}
                     alt={latestProject.title[currentLanguage as keyof typeof latestProject.title] || latestProject.title.en}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                     unoptimized
                   />
                 ) : (
@@ -260,12 +273,14 @@ const HomePage = () => {
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                {/* Overlay au survol */}
+                <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
                     {latestProject.title[currentLanguage as keyof typeof latestProject.title] || latestProject.title.en}
                   </h3>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                    {latestProject.technologies.map((tech, index) => (
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-2">
+                    {latestProject.technologies.slice(0, 4).map((tech, index) => (
                       <motion.span 
                         key={index}
                         variants={itemVariants}
@@ -274,6 +289,14 @@ const HomePage = () => {
                         {tech}
                       </motion.span>
                     ))}
+                    {latestProject.technologies.length > 4 && (
+                      <span className="px-2 py-0.5 sm:py-1 text-xs sm:text-sm bg-gray-700/80 text-gray-400 rounded-md">
+                        +{latestProject.technologies.length - 4}
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-blue-300 group-hover:text-blue-200 text-xs sm:text-sm font-medium">
+                    {t('projects.viewDetails') || 'Voir les détails'} →
                   </div>
                 </div>
               </motion.div>
@@ -326,6 +349,13 @@ const HomePage = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      {/* Modal de détails du projet */}
+      <ProjectModal
+        project={latestProject}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </motion.div>
   );
 };

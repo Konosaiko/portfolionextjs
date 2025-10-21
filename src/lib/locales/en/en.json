@@ -43,9 +43,11 @@
     "error": "An error occurred while loading projects",
     "empty": "No projects available at the moment",
     "viewProject": "View project",
+    "viewDetails": "View details",
     "readMore": "Read more",
     "seeLess": "See less",
     "categories": {
+      "title": "Categories",
       "all": "All",
       "frontend": "Frontend",
       "backend": "Backend",
@@ -239,17 +241,6 @@
       "unavailable": "Not Available",
       "updateSuccess": "Availability status updated successfully",
       "updateError": "Error updating availability status"
-    },
-    "form": {
-      "title": "Title",
-      "description": "Description",
-      "technologies": "Technologies",
-      "technologiesHelp": "Separate technologies with commas",
-      "link": "Project Link",
-      "categories": "Categories",
-      "image": "Image",
-      "save": "Save",
-      "saving": "Saving..."
     }
   },
   "availability": {
