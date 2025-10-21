@@ -17,7 +17,7 @@
     },
     "about": {
       "title": "À propos",
-      "description": "En tant que développeur passionné, je consacre chaque jour à perfectionner mes compétences en développement web et en modding. Spécialisé dans les technologies modernes comme React, TypeScript et Symfony, je crée des applications web performantes tout en explorant le développement de jeux à travers la création de mods pour RedM.",
+      "description": "En tant que développeur passionné, je consacre chaque jour à perfectionner mes compétences en développement web et en modding. Spécialisé dans les technologies modernes comme React, TypeScript et Symfony, je crée des applications web performantes tout en explorant le développement de jeux à travers la création de mods pour RedM/FiveM.",
       "cta": "En savoir plus"
     },
     "projects": {
@@ -61,7 +61,7 @@
     "title": "À propos",
     "subtitle": "Découvrez qui je suis et ce que je fais",
     "description": {
-      "content": "En tant que développeur passionné, j'ai toujours eu une attirance pour l'informatique en général, consacrant chaque jour à apprendre et améliorer mes connaissances et compétences. Mon intérêt pour la programmation va au-delà du développement web, avec une passion particulière pour le développement de jeux et la création de mods pour les serveurs RedM.\n\nEn dehors du code, je suis passionné par les sports de combat, le cyclisme et l'airsoft. Le cinéma et les séries TV occupent également une place importante dans ma vie.\nJe suis aussi un compétiteur dans l'âme, que ce soit dans le gaming/esport ou dans mes activités sportives. Cette mentalité de compétiteur m'aide à toujours chercher à m'améliorer et à repousser mes limites, que ce soit dans le développement ou dans mes passions personnelles."
+      "content": "En tant que développeur passionné, j'ai toujours eu une attirance pour l'informatique en général, consacrant chaque jour à apprendre et améliorer mes connaissances et compétences. Mon intérêt pour la programmation va au-delà du développement web, avec une passion particulière pour le développement de jeux et la création de mods pour les serveurs RedM/FiveM.\n\nEn dehors du code, je suis passionné par les sports de combat, le cyclisme et l'airsoft. Le cinéma et les séries TV occupent également une place importante dans ma vie.\nJe suis aussi un compétiteur dans l'âme, que ce soit dans le gaming/esport ou dans mes activités sportives. Cette mentalité de compétiteur m'aide à toujours chercher à m'améliorer et à repousser mes limites, que ce soit dans le développement ou dans mes passions personnelles."
     },
     "skills": {
       "title": "Compétences",
@@ -96,7 +96,7 @@
         },
         "gamedev": {
           "title": "Game Dev",
-          "description": "Le développement de jeux est un domaine qui me passionne et que je souhaite explorer davantage. Je crée actuellement des mods pour les serveurs RedM, mais je prévois de créer mes propres projets."
+          "description": "Le développement de jeux est un domaine qui me passionne et que je souhaite explorer davantage. Je crée actuellement des mods pour les serveurs RedM/FiveM, mais je prévois de créer mes propres projets."
         },
         "sports": {
           "title": "Sports",
@@ -104,7 +104,7 @@
         },
         "cinema": {
           "title": "Cinéma",
-          "description": "J'apprécie beaucoup le cinéma, particulièrement les séries TV. Les séries qui m'ont marqué sont Breaking Bad, Mr Robot et l'univers de Dexter."
+          "description": "J'apprécie beaucoup le cinéma, et particulièrement les séries TV."
         }
       }
     },
@@ -153,20 +153,7 @@
           "period": "2024 - Présent",
           "title": "Moddeur et développeur UI/UX",
           "company": "Freelance",
-          "description": "Création de scripts personnalisés pour les serveurs RedM. Création d'UI/UX pour les scripts RedM.",
-          "technologies": [
-            { "name": "React", "logo": "/logos/react.svg" },
-            { "name": "Lua", "logo": "/logos/lua.svg" },
-            { "name": "TypeScript", "logo": "/logos/typescript.svg" },
-            { "name": "MySQL", "logo": "/logos/mysql.svg" },
-            { "name": "Tailwind CSS", "logo": "/logos/tailwindcss.svg" }
-          ]
-        },
-        {
-          "period": "2025 - Présent",
-          "title": "Gestion d'un Serveur Communautaire RedM",
-          "company": "Freelance",
-          "description": "Je travaille sur un projet de serveur communautaire sur RedM, actuellement en développement. Je gère tout le modding et le développement UI/UX.",
+          "description": "Création de scripts personnalisés pour les serveurs RedM. Création d'UI/UX en React pour les scripts RedM.",
           "technologies": [
             { "name": "React", "logo": "/logos/react.svg" },
             { "name": "Lua", "logo": "/logos/lua.svg" },
@@ -175,6 +162,7 @@
             { "name": "Tailwind CSS", "logo": "/logos/tailwindcss.svg" }
           ]
         }
+        
       ]
     },
     "meta": {

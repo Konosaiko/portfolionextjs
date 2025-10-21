@@ -17,7 +17,7 @@
     },
     "about": {
       "title": "About",
-      "description": "As a passionate developer, I dedicate each day to perfecting my web development and modding skills. Specialized in modern technologies like React, TypeScript, and Symfony, I create high-performance web applications while exploring game development through RedM modding.",
+      "description": "As a passionate developer, I dedicate each day to perfecting my web development and modding skills. Specialized in modern technologies like React, TypeScript, and Symfony, I create high-performance web applications while exploring game development through RedM/FiveM modding.",
       "cta": "Learn more"
     },
     "projects": {
@@ -61,7 +61,7 @@
     "title": "About",
     "subtitle": "Discover who I am and what I do",
     "description": {
-      "content": "As a passionate developer, I've always had an attraction to computers in general, dedicating each day to learning and improving my knowledge and skills. My interest in programming goes beyond web development, with a particular passion for game development and creating mods for RedM servers.\n\nOutside of coding, I'm passionate about combat sports, cycling, and airsoft. Cinema and TV series also hold an important place in my life.\nI'm also a competitor at heart, whether in gaming/esports or in my sports activities. This competitive mindset helps me to always seek improvement and push my limits, whether in development or in my personal passions."
+      "content": "As a passionate developer, I've always had an attraction to computers in general, dedicating each day to learning and improving my knowledge and skills. My interest in programming goes beyond web development, with a particular passion for game development and creating mods for RedM/FiveM servers.\n\nOutside of coding, I'm passionate about combat sports, cycling, and airsoft. Cinema and TV series also hold an important place in my life.\nI'm also a competitor at heart, whether in gaming/esports or in my sports activities. This competitive mindset helps me to always seek improvement and push my limits, whether in development or in my personal passions."
     },
     "skills": {
       "title": "Skills",
@@ -96,7 +96,7 @@
         },
         "gamedev": {
           "title": "Game Dev",
-          "description": "Game development is a field that I'm passionate about and want to explore further. Currently creating mods for RedM servers, but I plan to create my own projects."
+          "description": "Game development is a field that I'm passionate about and want to explore further. Currently creating mods for RedM/FiveM servers, but I plan to create my own projects."
         },
         "sports": {
           "title": "Sports",
@@ -104,7 +104,7 @@
         },
         "cinema": {
           "title": "Cinema",
-          "description": "I really enjoy cinema, especially TV series. The series that have marked me are Breaking Bad, Mr Robot, and the Dexter universe."
+          "description": "I really enjoy cinema, especially TV shows."
         }
       }
     },
@@ -153,20 +153,7 @@
           "period": "2024 - Present",
           "title": "UI/UX Modder and Developer",
           "company": "Freelance",
-          "description": "Creation of custom scripts for RedM servers. Creation of UI/UX for RedM scripts.",
-          "technologies": [
-            { "name": "React", "logo": "/logos/react.svg" },
-            { "name": "Lua", "logo": "/logos/lua.svg" },
-            { "name": "TypeScript", "logo": "/logos/typescript.svg" },
-            { "name": "MySQL", "logo": "/logos/mysql.svg" },
-            { "name": "Tailwind CSS", "logo": "/logos/tailwindcss.svg" }
-          ]
-        },
-        {
-          "period": "2025 - Present",
-          "title": "Management of a RedM Community Server",
-          "company": "Freelance",
-          "description": "I'm working on a community server project on RedM, currently under development. I manage all the modding and UI/UX development.",
+          "description": "Creation of custom scripts for RedM servers. Creation of UI/UX in React for RedM scripts.",
           "technologies": [
             { "name": "React", "logo": "/logos/react.svg" },
             { "name": "Lua", "logo": "/logos/lua.svg" },

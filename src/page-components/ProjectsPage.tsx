@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
 
 interface Project {
   id: number;
@@ -119,8 +120,18 @@ const ProjectsPage: React.FC = () => {
               key={project.id}
               className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300"
             >
-              <div className="aspect-video bg-gray-700 flex items-center justify-center">
-                <span className="text-gray-400 text-sm sm:text-base">Image du projet</span>
+              <div className="aspect-video bg-gray-700 flex items-center justify-center relative overflow-hidden">
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title.fr || project.title.en}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                ) : (
+                  <span className="text-gray-400 text-sm sm:text-base">Image du projet</span>
+                )}
               </div>
               <div className="p-4 sm:p-5 md:p-6">
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2">

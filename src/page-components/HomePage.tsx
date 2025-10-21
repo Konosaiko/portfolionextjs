@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { 
@@ -245,9 +246,19 @@ const HomePage = () => {
                 variants={itemVariants}
                 className="relative aspect-video w-full overflow-hidden"
               >
-                <div className="w-full h-full bg-gray-700 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm sm:text-base">Image du projet</span>
-                </div>
+                {latestProject.image ? (
+                  <Image
+                    src={latestProject.image}
+                    alt={latestProject.title[currentLanguage as keyof typeof latestProject.title] || latestProject.title.en}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                    <span className="text-gray-400 text-sm sm:text-base">Image du projet</span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6">
                   <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2">
