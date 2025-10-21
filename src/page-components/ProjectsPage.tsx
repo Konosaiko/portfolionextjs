@@ -134,13 +134,13 @@ const ProjectsPage: React.FC = () => {
               onClick={() => openProjectModal(project)}
               className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-blue-500/30 transition-all duration-300 cursor-pointer group"
             >
-              <div className="aspect-video bg-gray-700 flex items-center justify-center relative overflow-hidden">
+              <div className="aspect-video bg-gray-900 flex items-center justify-center relative overflow-hidden">
                 {project.image ? (
                   <Image
                     src={project.image}
                     alt={project.title.fr || project.title.en}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                     unoptimized
                   />
                 ) : (

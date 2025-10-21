@@ -257,14 +257,14 @@ const HomePage = () => {
               <motion.div 
                 variants={itemVariants}
                 onClick={openProjectModal}
-                className="relative aspect-video w-full overflow-hidden cursor-pointer group"
+                className="relative aspect-video w-full overflow-hidden cursor-pointer group bg-gray-900 flex items-center justify-center"
               >
                 {latestProject.image ? (
                   <Image
                     src={latestProject.image}
                     alt={latestProject.title[currentLanguage as keyof typeof latestProject.title] || latestProject.title.en}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain group-hover:scale-105 transition-transform duration-300"
                     unoptimized
                   />
                 ) : (
@@ -272,10 +272,10 @@ const HomePage = () => {
                     <span className="text-gray-400 text-sm sm:text-base">Image du projet</span>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent pointer-events-none" />
                 {/* Overlay au survol */}
-                <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6">
+                <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-300 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 pointer-events-none">
                   <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
                     {latestProject.title[currentLanguage as keyof typeof latestProject.title] || latestProject.title.en}
                   </h3>

@@ -92,22 +92,22 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               </div>
 
               {/* Contenu scrollable */}
-              <div className="overflow-y-auto max-h-[calc(90vh-80px)]">
+              <div className="overflow-y-auto max-h-[calc(90vh-100px)] sm:max-h-[calc(90vh-120px)]">
                 {/* Image */}
                 {project.image && (
-                  <div className="relative w-full aspect-video bg-gray-900">
+                  <div className="relative w-full aspect-video bg-gray-900 flex items-center justify-center">
                     <Image
                       src={project.image}
                       alt={project.title[currentLanguage] || project.title.en}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       unoptimized
                     />
                   </div>
                 )}
 
                 {/* Contenu */}
-                <div className="p-4 sm:p-6 space-y-6">
+                <div className="p-4 sm:p-6 space-y-4 sm:space-y-6 pb-8">
                   {/* Catégories */}
                   <div>
                     <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">
